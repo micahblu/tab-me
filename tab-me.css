@@ -3,7 +3,7 @@
  * ---------------------------------------
  */
 
-.tabbify-tab-content {
+.tab-me-tab-content {
 	background-color:#ffffff;
 	box-sizing: border-box;
 	padding:10px; 	
@@ -11,24 +11,24 @@
 
 }
 
-.tabbify-content-wrapper{
+.tab-me-content-wrapper{
 	clear:both;
 	border: 1px solid #ccc;
 }
 
-ul.tabbify-tabs {
+ul.tab-me-tabs {
 	margin-bottom: -1px; 
 	position: relative;
 	z-index: 50;
 }
 
-ul.tabbify-tabs li{
+ul.tab-me-tabs li{
 	display: block;
 	background: none;
 	float:left;
 }
 
-ul.tabbify-tabs li a{
+ul.tab-me-tabs li a{
 	list-style:none;
 	display: block;
 	padding: 15px;
@@ -38,7 +38,7 @@ ul.tabbify-tabs li a{
 	background: #fff;
 }
 
-ul.tabbify-tabs li a.active{
+ul.tab-me-tabs li a.active{
 	border: 1px solid #ccc;
 	border-bottom: 1px solid white;
 	margin-bottom: -1px;
