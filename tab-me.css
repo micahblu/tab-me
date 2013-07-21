@@ -1,0 +1,47 @@
+/* --------------------------------------- 
+ * Tabs
+ * ---------------------------------------
+ */
+
+.tabbify-tab-content {
+	background-color:#ffffff;
+	box-sizing: border-box;
+	padding:10px; 	
+	width: 100%;
+
+}
+
+.tabbify-content-wrapper{
+	clear:both;
+	border: 1px solid #ccc;
+}
+
+ul.tabbify-tabs {
+	margin-bottom: -1px; 
+	position: relative;
+	z-index: 50;
+}
+
+ul.tabbify-tabs li{
+	display: block;
+	background: none;
+	float:left;
+}
+
+ul.tabbify-tabs li a{
+	list-style:none;
+	display: block;
+	padding: 15px;
+	color: black;
+	font-family: 'Futura Light', Helvetica, Arial, sans-serif;
+	font-size: 17px;
+	background: #fff;
+}
+
+ul.tabbify-tabs li a.active{
+	border: 1px solid #ccc;
+	border-bottom: 1px solid white;
+	margin-bottom: -1px;
+}
+
+
