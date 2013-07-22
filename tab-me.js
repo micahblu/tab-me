@@ -1,12 +1,16 @@
-// Tabs
+/**
+ * Tab Me
+ *
+ * Core and very simple jQuery for Tab Me Tabs
+ *
+ * @since 0.5
+ */
 jQuery(document).ready(function($){
 
 	$('.tab-me-tabs li').click(function(){
 		switch_tabs($(this));
 	});
-	
-	//switch_tabs($('.active'));
-	
+		
 	function switch_tabs(obj) {
 	
 		$('.tab-me-tab-content').hide();

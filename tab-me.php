@@ -10,8 +10,14 @@ License: GPL
 Copyright: Micah Blu
 */
 
-// Shortcode: tab
-// Usage: [tab title="title 1"]Your content goes here...[/tab]
+/**
+ * Shortcode: [tab]
+ *
+ * @usage: [tab title="title 1"]Your content goes here...[/tab]
+ * @since 0.5
+ * @params '$atts'    (Array)   |  array of attributes
+ * @params '$content' (String)  |  string contents of the tabs
+ */ 
 function tab_func( $atts, $content = null ) {
     extract(shortcode_atts(array(
 	    'title'      => '',
@@ -70,7 +76,4 @@ function tab_me_scripts(){
 }
 
 add_action('wp_enqueue_scripts', 'tab_me_scripts');
-
-
-
 ?>
