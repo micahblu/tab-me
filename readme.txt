@@ -39,8 +39,8 @@ Currently you'll have to go to the plugin editor and edit the tab-me.css file
 
 == Screenshots ==
 
-1. Sample tab shortcode screenshot-1.png.
-2. What it looks like
+1. This is what the final product looks like: screenshot-1.png
+2. Here's an example of the shortcode used to make the show screenshot: screenshot-2.png
 
 == Changelog ==
 
