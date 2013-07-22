@@ -32,24 +32,30 @@ function tabs_func( $atts, $content = null ) {
     global $single_tab_array;
     $single_tab_array = array(); // clear the array
     
+    $tabs_nav = '';
+    $tabs_content = '';
+    $tabs_output = '';
  
     $tabs_nav = '<div class="tab-me-wrapper">';
     $tabs_nav .= '<ul class="tab-me-tabs">';
     
     do_shortcode($content); // execute the '[tab]' shortcode first to get the title and content
     
+
+    //declare our vars to be super clean here
+
     foreach ($single_tab_array as $tab => $tab_attr_array) {
     
 			$random_id = rand(1000,2000);
 			
 			$default = ( $tab == 0 ) ? ' class="active"' : '';
 			
-			$tabs_nav .= '<li><a href="javascript:void(0)"'.$default.' rel="tab'.$random_id.'"><span>'.$tab_attr_array['title'].'</span></a></li>';
-			$tabs_content .= '<div class="tab-me-tab-content" id="tab' . $random_id . '">'.$tab_attr_array['content'].'</div>';
+			$tabs_nav .= '<li'.$default.'><a href="javascript:void(0)" rel="tab'.$random_id.'"><span>'.$tab_attr_array['title'].'</span></a></li>';
+			$tabs_content .= '<div class="tab-me-tab-content" id="tab' . $random_id . '" ' . ( $tab!=0 ? 'style="display:none"' : '') . '>'.$tab_attr_array['content'].'</div>';
     }
     $tabs_nav .= '</ul>';
     
-    $tabs_output .= $tabs_nav . '<div class="tab-me-content-wrapper">' . $tabs_content . '</div>';
+    $tabs_output = $tabs_nav . '<div class="tab-me-content-wrapper">' . $tabs_content . '</div>';
     $tabs_output .= '</div><!-- tabs-wrapper end -->';
 
     return $tabs_output;

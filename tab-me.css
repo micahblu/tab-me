@@ -8,7 +8,6 @@
 	box-sizing: border-box;
 	padding:10px; 	
 	width: 100%;
-
 }
 
 .tab-me-content-wrapper{
@@ -38,10 +37,14 @@ ul.tab-me-tabs li a{
 	background: #fff;
 }
 
-ul.tab-me-tabs li a.active{
-	border: 1px solid #ccc;
-	border-bottom: 1px solid white;
+ul.tab-me-tabs li.active a{
+
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
 	margin-bottom: -1px;
 }
 
+ul.tab-me-tabs li.active{
+	border-top: 5px solid #2ba6cb;
+}
 
