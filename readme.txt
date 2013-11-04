@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: Tabs, Tab, shortcode, content
 Requires at least: 3.0.1
 Tested up to: 3.4
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,9 @@ Currently you'll have to go to the plugin editor and edit the tab-me.css file
 2. Here's an example of the shortcode used to make the show screenshot: screenshot-2.png
 
 == Changelog ==
+
+= 1.0.1 =
+* Now multiple Tab Me tab groups will works on the same page. Thanks http://profiles.wordpress.org/flymke !
 
 = 1.0 =
 * Initial version

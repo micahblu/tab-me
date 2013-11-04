@@ -4,7 +4,7 @@ Tab Me!
 A simple Wordpress plugin for tabbing content
 
 = Version
-0.9
+* 1.0.1
 
 = Usage
 Tab Me uses shortcodes to tab your post, page or custom post content
@@ -25,3 +25,7 @@ Syntax:
 * A: Yes, but currenlty you have to edit the tab-me.css yourself
 
 * Can I run multiple tabs?
+* Yes!
+
+= Support 
+* I offer limited supported on all my free plugins. Tweet for support @micahblu
