@@ -13,9 +13,11 @@ jQuery(document).ready(function($){
 		
 	function switch_tabs(obj) {
 	
-		$('.tab-me-tab-content').hide();
-		$('.tab-me-tabs li').removeClass("active");
-		
+		//$('.tab-me-tab-content').hide();
+		//$('.tab-me-tabs li').removeClass("active");
+		obj.parent().parent().find('.tab-me-tab-content').hide();
+		obj.parent().find('li').removeClass("active");
+
 		var id = obj.find("a", 0).attr("rel");
 		
 		$('#'+id).show();
