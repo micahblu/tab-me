@@ -3,7 +3,7 @@
 Plugin Name: Tab Me
 Plugin URI: 
 Description: Provides a shortcode which allows tabbed content
-Version: 1.0.1 
+Version: 1.0.2 
 Author: Micah Blu
 Author URI: http://www.micahblu.com/
 License: GPL
@@ -15,24 +15,27 @@ Copyright: Micah Blu
  *
  * @usage: [tab title="title 1"]Your content goes here...[/tab]
  * @since 0.5
- * @params '$atts'    (Array)   |  array of attributes
- * @params '$content' (String)  |  string contents of the tabs
+ * @param '$atts'    (Array)   |  array of attributes
+ * @param '$content' (String)  |  string contents of the tabs
  */ 
 function tab_func( $atts, $content = null ) {
     extract(shortcode_atts(array(
-	    'title'      => '',
+	    'title'  => '',
+      'link'   => '' ,
+      'target' => ''
     ), $atts));
     global $single_tab_array;
-    $single_tab_array[] = array('title' => $title, 'content' => trim(do_shortcode($content)));
+    $single_tab_array[] = array('title' => $title, 'link' => $link, 'content' => trim(do_shortcode($content)));
     return $single_tab_array;
 }
 add_shortcode('tab', 'tab_func');
 
 /* Shortcode: tabs
- * Usage:   [tabs]
- * 		[tab title="title 1"]Your content goes here...[/tab]
- * 		[tab title="title 2"]Your content goes here...[/tab]
- * 	    [/tabs]
+ * Usage:   
+ *  [tabs]
+ * 	  [tab title="title 1"]Your content goes here...[/tab]
+ *    [tab title="title 2"]Your content goes here...[/tab]
+ * 	[/tabs]
  */
 function tabs_func( $atts, $content = null ) {
     global $single_tab_array;
@@ -45,24 +48,27 @@ function tabs_func( $atts, $content = null ) {
     $tabs_nav = '<div class="tab-me-wrapper">';
     $tabs_nav .= '<ul class="tab-me-tabs">';
     
-    do_shortcode($content); // execute the '[tab]' shortcode first to get the title and content
+     // execute the '[tab]' shortcode first to get the title and content - acts on global $single_tab_array
+    do_shortcode($content);
     
-
     //declare our vars to be super clean here
-
     foreach ($single_tab_array as $tab => $tab_attr_array) {
-    
-			$random_id = rand(1000,2000);
-			
-			$default = ( $tab == 0 ) ? ' class="active"' : '';
-			
-			$tabs_nav .= '<li'.$default.'><a href="javascript:void(0)" rel="tab'.$random_id.'"><span>'.$tab_attr_array['title'].'</span></a></li>';
-			$tabs_content .= '<div class="tab-me-tab-content" id="tab' . $random_id . '" ' . ( $tab!=0 ? 'style="display:none"' : '') . '>'.$tab_attr_array['content'].'</div>';
+
+    	$random_id = rand(1000,2000); // potential duplicate issue.. need to fix
+    	
+    	$default = ( $tab == 0 ) ? ' class="active"' : '';
+    	
+      if($tab_attr_array['link'] != ""){
+        $tabs_nav .= '<li'.$default.'><a class="tab-me-link" href="' . $tab_attr_array["link"] . '" target="' . $tab_attr_array["target"] . '" rel="tab'.$random_id.'"><span>'.$tab_attr_array['title'].'</span></a></li>';
+      }else{
+      	$tabs_nav .= '<li'.$default.'><a href="javascript:void(0)" rel="tab'.$random_id.'"><span>'.$tab_attr_array['title'].'</span></a></li>';
+      	$tabs_content .= '<div class="tab-me-tab-content" id="tab' . $random_id . '" ' . ( $tab!=0 ? 'style="display:none"' : '') . '>'.$tab_attr_array['content'].'</div>';
+      }
     }
-    $tabs_nav .= '</ul>';
+    $tabs_nav .= '</ul><!-- .tab-me-tabs -->';
     
     $tabs_output = $tabs_nav . '<div class="tab-me-content-wrapper">' . $tabs_content . '</div>';
-    $tabs_output .= '</div><!-- tabs-wrapper end -->';
+    $tabs_output .= '</div><!-- .tabs-wrapper -->';
 
     return $tabs_output;
 }
@@ -76,4 +82,3 @@ function tab_me_scripts(){
 }
 
 add_action('wp_enqueue_scripts', 'tab_me_scripts');
-?>

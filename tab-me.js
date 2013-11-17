@@ -8,7 +8,11 @@
 jQuery(document).ready(function($){
 
 	$('.tab-me-tabs li').click(function(){
-		switch_tabs($(this));
+		
+		if($(this).find(".tab-me-link").attr("class") != "tab-me-link"){
+			switch_tabs($(this));
+		}
+		
 	});
 		
 	function switch_tabs(obj) {

@@ -4,7 +4,7 @@ Tab Me!
 A simple Wordpress plugin for tabbing content
 
 = Version
-* 1.0.1
+* 1.0.2
 
 = Usage
 Tab Me uses shortcodes to tab your post, page or custom post content
@@ -19,6 +19,18 @@ Syntax:
   Even more clever content goes here!
   [/tab]
 [/tabs]
+
+== Changelog ==
+
+= 1.0.2 =
+* Fixed a padding issue that was present with some themes
+* Added ability to set tabs to external/internal links with along with a target attribute
+
+= 1.0.1 =
+* Now multiple Tab Me tab groups will works on the same page. Thanks http://profiles.wordpress.org/flymke !
+
+= 1.0 =
+* Initial version
 
 = FAQ's
 * Q: Can I change color scheme?

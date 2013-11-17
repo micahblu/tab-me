@@ -22,6 +22,7 @@ ul.tab-me-tabs {
 	margin-bottom: -1px; 
 	position: relative;
 	z-index: 50;
+	padding: 0px;
 }
 
 ul.tab-me-tabs li{
