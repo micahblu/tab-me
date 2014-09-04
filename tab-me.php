@@ -3,7 +3,7 @@
 Plugin Name: Tab Me
 Plugin URI: 
 Description: Provides a shortcode which allows tabbed content
-Version: 1.0.2 
+Version: 1.0.3
 Author: Micah Blu
 Author URI: http://www.micahblu.com/
 License: GPL
